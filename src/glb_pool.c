@@ -121,7 +121,7 @@ typedef enum pool_fd_ops
 {
 #ifdef USE_EPOLL
     POOL_FD_READ  = EPOLLIN,
-    POOL_FD_WRITE = EPOLLOUT,
+    POOL_FD_WRITE = EPOLLOUT|EPOLLERR,
 #else /* POLL */
     POOL_FD_READ  = POLLIN,
     POOL_FD_WRITE = POLLOUT,
